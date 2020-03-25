@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Animal Bubble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Jua');
+  body {
+    font-family: 'Jua';
+    background: #ffd1dc;
+    color: white;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  a, button {
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background: pink;
+    padding: 3px 5px;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+  }
+
+  button {
+    font-size: 1.5em;
+    margin: 5px;
+    transition: opactity .5s;
+    cursor: pointer;
+  }
+
+  button[disabled] {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  canvas {
+    max-width: 100%;
+  }
+
+  input, textarea {
+    width: 100%;
+    border: none;
+    background: rgba(0,0,0, 0.33);
+    color: white;
+    font-family: inherit;
+    font-size: 1em;
+    font-size: clamp(16px, 4vw, 22px);
+    padding: 1.5em;
+    border-radius: 20px;
+    margin-bottom: .5em;
+    outline: none;
+  }
+  textarea {
+    height: 130px;
+  }
+</style>
+<script src="animalese/riffwave.js"></script>
+<script src="animalese/Blob.js"></script>
+<script src="animalese/FileSaver.min.js"></script>
+<script src="animalese/animalese.js"></script>
+  <body>
+
+    <canvas id="canvas" width="650" height="365.63">
+      Need canvas support sorry
+    </canvas>
+    <input type="text" id="name" value="Chirpy"  onchange="document.getElementById('download').disabled = true;" /><br/>
+    <textarea id="text" rows"4" cols="50"  oninput="document.getElementById('download').disabled = true;">Hey! Get typing and hit preview to start..  you can do it .. hehe</textarea><br/>
+    <label style="display: none;"><input id="shorten" type="checkbox"/>Shorten</label><br/>
+    <button id="download" type="button" disabled="true" onclick="downloadRecording()">Download!</button>
+    <button id="preview" type="button" disabled="true" onclick="preview()">Preview!</button>
+
+    <br><br>
+    <p>Huge thanks to <a href="https://github.com/Acedio/animalese.js">animalese.js</a> for the sounds!</p>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
