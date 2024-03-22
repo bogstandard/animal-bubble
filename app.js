@@ -35,7 +35,7 @@ function makeBase(cb) {
 function niceText(line, x, y) {
     context.shadowColor="black";
     context.shadowBlur=2;
-    context.lineWidth=2;
+    context.lineWidth=5;
     context.strokeText(line, x, y);
     context.shadowBlur=0;
     context.fillStyle="white";
@@ -76,8 +76,10 @@ function renderRecord(dummy=false) {
             });
 
             if (pos >= input.length) {
-                if(!dummy)
+                if(!dummy){
+                    document.getElementById("download").disabled = true;
                     document.getElementById("download").textContent = 'Gimme a sec..';
+                }
             }
 
             if (pos <= input.length + 50) {
